@@ -75,7 +75,7 @@ void start()
                 {
                     int xSW = vSheWolf[i].getX();
                     int ySW = vSheWolf[i].getY();
-                    cout << "SheWolf was eated Rabbit on X: " << xSW << "; Y: " << ySW << endl;
+                    cout << "SheWolf " << i <<" was eated Rabbit on X: " << xSW << "; Y: " << ySW << endl;
                     rabbitCounter--;
                 }
                 if (checkFeed == false)
@@ -87,16 +87,16 @@ void start()
                     int ySW2 = vSheWolf[i].getY();
                     if(xSW1 == xSW2 && ySW1 == ySW2)
                     {
-                     cout << "SheWolf was staying" << endl;
+                     cout << "SheWolf " << i <<"was staying" << endl;
                     }
                     else
                     {
-                      cout << "SheWolf was moved on: X: " << xSW2 << "; Y: " << ySW2 << endl;
+                      cout << "SheWolf " << i <<" was moved on: X: " << xSW2 << "; Y: " << ySW2 << endl;
                     }
                 }
                 vSheWolf[i].setHunger(vSheWolf[i].getHunger() - 10);
             }
-            else { vSheWolf.erase(vSheWolf.begin() + i); cout << "SheWolf die" << endl; wolfCounter--; }
+            else { vSheWolf.erase(vSheWolf.begin() + i); cout << "SheWolf " << i <<" die" << endl; wolfCounter--; }
         }
 
         for (unsigned int i = 0; i < vWolf.size(); i++)
@@ -112,7 +112,7 @@ void start()
                 {
                     int xW = vWolf[i].getX();
                     int yW = vWolf[i].getY();
-                    cout << "Wolf was eated Rabbit on: X: " << xW << "; Y: " << yW << endl; rabbitCounter--;
+                    cout << "Wolf " << i <<" was eated Rabbit on: X: " << xW << "; Y: " << yW << endl; rabbitCounter--;
                 }
                 if (checkFeed == false)
                 {
@@ -127,17 +127,17 @@ void start()
                         int yW2 = vWolf[i].getY();
                         if(xW1 == xW2 && yW1 == yW2)
                         {
-                        cout << "Wolf was staying" << endl;
+                        cout << "Wolf " << i <<" was staying" << endl;
                         }
                         else
                         {
-                           cout << "Wolf was moved on: X: " << xW2 << "; Y: " << yW2 << endl;
+                           cout << "Wolf " << i <<" was moved on: X: " << xW2 << "; Y: " << yW2 << endl;
                         }
                     }
                 }
                 vWolf[i].setHunger(vWolf[i].getHunger() - 10);
             }
-            else { vWolf.erase(vWolf.begin() + i); cout << "Wolf die" << endl; wolfCounter--; }
+            else { vWolf.erase(vWolf.begin() + i); cout << "Wolf " << i <<" die" << endl; wolfCounter--; }
         }
         cout << "Wolves: " << wolfCounter << endl << "Rabbits: " << rabbitCounter << endl << endl;
         cout << "------------------------------------------------------------------------" << endl;

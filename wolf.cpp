@@ -67,6 +67,14 @@ void wolf::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wolf>
             sWNum = i;
         }
     }
+
+    for(unsigned int i = 0; i < vWolf.size(); i++ )
+    {
+        int checkX = vWolf[i].getX();
+        int checkY = vWolf[i].getY();
+        if(sheX == checkX && sheY == checkY){return;}
+    }
+
     if (sheX != -1 && sheY != -1)
     {
         int block = 0;
