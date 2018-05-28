@@ -246,7 +246,10 @@ void animal::move(std::vector<class rabbit>& vRabbit, std::vector<class wolf>& v
     {
         if(pozition[i] == false){ block++;}
     }
-    if(block == 8){std::cout << "Wolf was staying" << std::endl; return;}
+    if(block == 8)
+    {
+        return;
+    }
     else
     {
     setX(nX);

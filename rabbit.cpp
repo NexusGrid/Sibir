@@ -22,14 +22,13 @@ void rabbit::move(std::vector<class rabbit>& vRabbit, std::vector<class wolf>& v
         if(pozition[i] == false){ block++;}
     }
     if(block == 8)
-    { std::cout << "Rabbit was staying"<< std::endl;
+    {
         return;
     }
     else
     {
     setX(nX);
     setY(nY);
-    std::cout << "Rabbit was move on: X: " << nX << "; Y: " << nY << std::endl;
     }
 
     }
@@ -38,8 +37,6 @@ void rabbit::move(std::vector<class rabbit>& vRabbit, std::vector<class wolf>& v
 void rabbit::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wolf>& vWolf, std::vector<class sheWolf>& vSheWolf,map& m)
 {
     int block = 0;
-    //unsigned int xR = getX();
-    //unsigned int yR = getY();
     unsigned int nX, nY;
     bool pozition[8];
     checkBlock(vRabbit, vWolf, vSheWolf, pozition, m);
@@ -49,13 +46,14 @@ void rabbit::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wol
         if(pozition[i] == false){ block++;}
     }
     if(block == 8)
-    { std::cout << "Rabbit cant botn"<< std::endl;
+    {
         return;
     }
-    else{
+    else
+    {
     rabbit rab(nX, nY);
+    m.screen[nX][nY] = 'R';
     vRabbit.push_back(rab);
     rab.~rabbit();
-    std::cout << "Rabbit was born on: X: " << nX << "; X: " << nY << std::endl;
     }
 }

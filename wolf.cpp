@@ -4,7 +4,7 @@ wolf::wolf() { hunger = 100; }
 wolf::wolf(unsigned int nX, unsigned int nY){ setX(nX), setY(nY), hunger = 100; }
 wolf::~wolf() {}
 
-void wolf::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wolf>& vWolf, std::vector<class sheWolf>& vSheWolf,map& m, bool& check)
+void wolf::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wolf>& vWolf, std::vector<class sheWolf>& vSheWolf, map& m, bool& check)
 {
     unsigned int nX = getX();
     unsigned int nY = getY();
@@ -89,7 +89,10 @@ void wolf::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wolf>
         {
             if(pozition[i] == false){ block++;}
         }
-        if(block == 8){std::cout << "Wolf cant born" << std::endl; return;}
+        if(block == 8)
+        {
+            return;
+        }
         else{
 
         if (r == 0)
@@ -98,7 +101,7 @@ void wolf::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wolf>
             vWolf.push_back(newWolf);
             newWolf.~wolf();
             check = true;
-            std::cout << "Wolf was born on: X:" << newX <<"; Y:" << newY <<std::endl;
+            m.screen[newX][newY] = 'W';
         }
         if (r == 1)
         {
@@ -106,7 +109,8 @@ void wolf::reproduce(std::vector<class rabbit>& vRabbit, std::vector<class wolf>
             vSheWolf.push_back(newSheWolf);
             newSheWolf.~sheWolf();
             check = true;
-             std::cout << "SheWolf was born on: X:" << newX <<"; Y:" << newY <<std::endl;
+            m.screen[newX][newY] = 'S';
+
         }
         }
 

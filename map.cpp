@@ -1,4 +1,5 @@
 #include "map.h"
+#include <iostream>
 
 void map::setLength(int x)
 {
@@ -25,3 +26,28 @@ map::map()
 map::~map()
 {
 }
+
+void map::initMap()
+{
+    for(int i = 0; i < map::getHeight(); i++)
+    {
+        for(int j = 0 ; j < map::getLength(); j++)
+        {
+            screen[i][j] = ' ';
+        }
+    }
+}
+
+void map::printMap()
+{
+    for(int i = 0; i < map::getHeight(); i++)
+    {
+        for(int j = 0 ; j < map::getLength(); j++)
+        {
+            std::cout << screen[i][j];
+        }
+        std::cout << std::endl;
+    }
+
+}
+

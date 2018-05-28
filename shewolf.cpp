@@ -16,7 +16,7 @@ void sheWolf::hunt(std::vector<class rabbit>& vRabbit, bool& check)
     unsigned int rNum;
 
 
-    for (int i = 0; i < vRabbit.size(); i++)
+    for (unsigned int i = 0; i < vRabbit.size(); i++)
     {
         unsigned int xR = vRabbit[i].getX();
         unsigned int yR = vRabbit[i].getY();
